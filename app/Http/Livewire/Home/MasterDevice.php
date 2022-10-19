@@ -15,6 +15,8 @@ class MasterDevice extends Component
     public $user;
     public $search;
     public $name, $location;
+    protected $paginationTheme = 'bootstrap';
+
 
     protected $rules = [
         'name' => 'required',

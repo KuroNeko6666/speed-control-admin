@@ -16,6 +16,8 @@ class UserDevice extends Component
     public $user_device;
     public $user;
     public $user_id, $device_id;
+    protected $paginationTheme = 'bootstrap';
+
 
     protected $rules = [
         'user_id' => 'required',

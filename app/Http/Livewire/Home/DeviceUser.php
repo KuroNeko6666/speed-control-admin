@@ -19,6 +19,8 @@ class DeviceUser extends Component
     public $search;
     public $users, $devices;
     public $user_id, $device_id;
+    protected $paginationTheme = 'bootstrap';
+
 
     protected $rules = [
         'user_id' => 'required',
