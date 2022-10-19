@@ -17,7 +17,7 @@ class MasterUser extends Component
 
     public function mount()
     {
-        $this->user = auth()->user();
+        $this->data_user = auth()->user();
 
     }
 
