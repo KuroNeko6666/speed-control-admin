@@ -6,9 +6,11 @@ use App\Models\User;
 use App\Models\Admin;
 use Livewire\Component;
 use App\Http\Livewire\Home\DataSidebar;
+use Livewire\WithPagination;
 
 class MasterOperator extends Component
 {
+    use WithPagination;
 
     public $admin;
     public $user;

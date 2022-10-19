@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Home;
 use App\Models\User;
 use Livewire\Component;
 use App\Http\Livewire\Home\DataSidebar;
+use Livewire\WithPagination;
 
 class MasterUser extends Component
 {
+    use WithPagination;
+
     public $user;
     public $data_user;
     public $name, $email, $password;

@@ -6,9 +6,11 @@ use App\Models\User;
 use App\Models\Device;
 use Livewire\Component;
 use App\Http\Livewire\Home\DataSidebar;
+use Livewire\WithPagination;
 
 class MasterDevice extends Component
 {
+    use WithPagination;
     public $device;
     public $user;
     public $search;

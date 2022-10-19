@@ -7,9 +7,12 @@ use App\Models\Device;
 use Livewire\Component;
 use App\Http\Livewire\Home\UserDevice;
 use App\Http\Livewire\Home\DataSidebar;
+use Livewire\WithPagination;
+
 
 class UserDevice extends Component
 {
+    use WithPagination;
     public $user_device;
     public $user;
     public $user_id, $device_id;
