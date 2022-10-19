@@ -38,7 +38,7 @@
                             <input type="text" wire:model='search' name="search" class="form-control"
                                 id="inputSearch" placeholder="Search">
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+
                         <button type="button" class="btn btn-secondary mb-2 ml-3" data-toggle="modal"
                             data-target="#createModal">Add Data</button>
                     </form>
