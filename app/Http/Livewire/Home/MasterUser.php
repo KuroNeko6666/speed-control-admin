@@ -17,7 +17,7 @@ class MasterUser extends Component
 
     public function mount()
     {
-        $this->data_user = auth()->user();
+        $this->user = auth()->user();
 
     }
 
@@ -46,7 +46,7 @@ class MasterUser extends Component
 
     public function show(User $user)
     {
-        $this->user = $user;
+        $this->data_user = $user;
         $this->name = $user->name;
         $this->email = $user->email;
     }
@@ -68,7 +68,7 @@ class MasterUser extends Component
             ]);
         }
 
-        $affectedRows = $this->user->update($data);
+        $affectedRows = $this->data_user->update($data);
         $this->resetData();
         $this->dispatchBrowserEvent('closeEditModal');
         if($affectedRows) {
@@ -80,7 +80,7 @@ class MasterUser extends Component
 
     public function delete()
     {
-        $affectedRows = $this->user->delete();
+        $affectedRows = $this->data_user->delete();
         if($affectedRows) {
             return session()->flash('success', 'Data has been deleted!');
         }
@@ -106,7 +106,7 @@ class MasterUser extends Component
         }
         return view('livewire.home.master-user', ['data' => $users])
         ->layout('layouts.home', [
-            'user' => $this->data_user,
+            'user' => $this->user,
             'menus' => $menus,
             'role' => $role
         ]);
