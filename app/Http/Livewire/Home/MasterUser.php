@@ -54,7 +54,7 @@ class MasterUser extends Component
     public function update()
     {
         $data;
-        if ($this->user->email == $this->email) {
+        if ($this->data_user->email == $this->email) {
             $data = $this->validate([
                 'name' => 'required',
                 'email' => 'required|email',
