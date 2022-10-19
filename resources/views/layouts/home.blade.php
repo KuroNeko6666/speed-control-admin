@@ -25,10 +25,10 @@
 
 </head>
 
-<body id="page-top" class="modal-open">
+<body id="page-top">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" >
 
         @include('partials.home.sidebar')
 

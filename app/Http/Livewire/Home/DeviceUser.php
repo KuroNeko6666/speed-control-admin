@@ -13,6 +13,7 @@ class DeviceUser extends Component
 
     public $user_device;
     public $user;
+    public $search;
     public $users, $devices;
     public $user_id, $device_id;
 
@@ -117,11 +118,15 @@ class DeviceUser extends Component
         $this->device_id = '';
     }
 
+    public function search(){
+        $this->render();
+    }
+
     public function render()
     {
         $data = new DataSidebar;
         $menus = $data->data('user_device');
-        $user_devices = UserDevice::latest()->paginate(10)->withQueryString();
+        $user_devices = UserDevice::latest()->filter(['search' => $this->search])->paginate(10)->withQueryString();
         $role = auth()->user()->role;
         if($role == 'admin') {
             unset($menus['user_device']);

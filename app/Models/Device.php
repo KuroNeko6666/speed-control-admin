@@ -19,4 +19,14 @@ class Device extends Model
     public function user() {
         return $this->hasMany(UserDevice::class, 'device_id');
     }
+
+    public function scopeFilter($query, array $fillters) {
+        $query->when($fillters['search'] ?? false, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->where('id', 'like', '%'. $search. '%')
+                ->orWhere('name', 'like', '%'. $search. '%')
+                ->orWhere('location', 'like', '%'. $search. '%');
+            });
+        });
+    }
 }

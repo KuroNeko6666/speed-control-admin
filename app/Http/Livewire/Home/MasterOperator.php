@@ -12,6 +12,7 @@ class MasterOperator extends Component
 
     public $admin;
     public $user;
+    public $search;
     public $name, $email, $password;
     protected $paginationTheme = 'bootstrap';
 
@@ -94,11 +95,15 @@ class MasterOperator extends Component
         $this->password = '';
     }
 
+    public function search(){
+        $this->render();
+    }
+
     public function render()
     {
         $data = new DataSidebar;
         $menus = $data->data('master', 'operator');
-        $operators = Admin::latest()->filter(['role' => 'operator'])->paginate(10)->withQueryString();
+        $operators = Admin::latest()->filter(['search' => $this->search])->filter(['role' => 'operator'])->paginate(10)->withQueryString();
         $role = auth()->user()->role;
         if($role == 'admin') {
             unset($menus['user_device']);

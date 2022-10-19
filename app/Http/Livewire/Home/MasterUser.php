@@ -93,6 +93,10 @@ class MasterUser extends Component
         $this->password = '';
     }
 
+    public function search(){
+        $this->render();
+    }
+
     public function render()
     {
         $data = new DataSidebar;

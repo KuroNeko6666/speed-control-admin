@@ -32,7 +32,7 @@
             <div class="card-header py-3">
                 <div class="row justify-content-between mx-2 align-items-center">
                     <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                    <form class="form-inline" wire:submit.prevent='search'>
+                    <form class="form-inline" wire:submit.prevent='search()'>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="inputSearch" class="sr-only">Search</label>
                             <input type="text" wire:model='search' name="search" class="form-control"

@@ -11,6 +11,7 @@ class MasterDevice extends Component
 {
     public $device;
     public $user;
+    public $search;
     public $name, $location;
 
     protected $rules = [
@@ -81,11 +82,15 @@ class MasterDevice extends Component
         $this->location = '';
     }
 
+    public function search(){
+        $this->render();
+    }
+
     public function render()
     {
         $data = new DataSidebar;
         $menus = $data->data('master', 'device');
-        $devices = Device::latest()->paginate(10)->withQueryString();
+        $devices = Device::latest()->filter(['search' => $this->search])->paginate(10)->withQueryString();
         $role = auth()->user()->role;
         if($role == 'admin') {
             unset($menus['user_device']);
