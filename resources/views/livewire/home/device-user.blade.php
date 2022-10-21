@@ -154,7 +154,7 @@
                         <datalist>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Email</label>
+                        <label for="exampleFormControlInput1">Device ID</label>
                         <input wire:model.defer='device_id' type="text"
                             class="form-control  @error('device_id') is-invalid @enderror" id="exampleFormControlInput1"
                             placeholder="device_id" list="device">
