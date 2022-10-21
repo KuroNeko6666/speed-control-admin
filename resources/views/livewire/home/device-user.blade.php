@@ -66,10 +66,10 @@
                                             <div class="row justify-content-center">
                                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                                     data-target="#editModal"
-                                                    wire:click.prevent='show({{ $item->id }})'>Edit</button>
+                                                    wire:click='show({{ $item->id }})'>Edit</button>
                                                 <button type="button" class="btn btn-danger ml-2" data-toggle="modal"
                                                     data-target="#deleteModal"
-                                                    wire:click.prevent='show({{ $item->id }})'>Delete</button>
+                                                    wire:click='show({{ $item->id }})'>Delete</button>
                                             </div>
                                         </td>
                                     </tr>
