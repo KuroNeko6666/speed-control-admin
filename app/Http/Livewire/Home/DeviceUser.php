@@ -118,7 +118,8 @@ class DeviceUser extends Component
         return session()->flash('error', 'Data failed to delete');
     }
 
-    public function resetData(){
+    public function resetData($modal){
+        $this->dispatchBrowserEvent($modal);
         $this->user_id = '';
         $this->device_id = '';
     }
