@@ -52,6 +52,8 @@ class MasterOperator extends Component
     public function show(Admin $admin)
     {
         $this->admin = $admin;
+        $this->email = $admin->email;
+        $this->name = $admin->name;
     }
 
     public function update()
