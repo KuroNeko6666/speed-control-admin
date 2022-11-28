@@ -3,7 +3,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 text-gray-800 mb-4">Data Device User</h1>
+        <h1 class="h3 text-gray-800 mb-4">Data Device</h1>
 
 
         @if (session()->has('error'))
