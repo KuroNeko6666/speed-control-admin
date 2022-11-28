@@ -10,6 +10,7 @@ use App\Http\Livewire\Home\UserDevice;
 use App\Http\Livewire\Home\MasterAdmin;
 use App\Http\Livewire\Home\MasterDevice;
 use App\Http\Livewire\Home\MasterOperator;
+use App\Http\Livewire\Home\DataDevices;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/master-operator', MasterOperator::class)->name('master-operator');
     Route::get('/master-device', MasterDevice::class)->name('master-device');
     Route::get('/user-device', DeviceUser::class)->name('user-device');
+    Route::get('/data-device', DataDevices::class)->name('data-device');
 });
 
 Route::middleware(['guest'])->group(function () {

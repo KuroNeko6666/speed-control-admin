@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use App\Models\Device;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class DataDevice extends Model
 {
@@ -12,13 +13,21 @@ class DataDevice extends Model
 
     protected $guarded = ['id'];
     public function device() {
-        return $this->belongTo(User::class, 'device_id');
+        return $this->belongsTo(Device::class, 'device_id');
     }
 
     public function scopeFilter($query, array $fillters) {
         $query->when($fillters['created_at'] ?? false, function ($query, $search) {
             return $query->where(function ($query) use ($search) {
                 $query->whereDate('created_at',  $search == 0 ? $this->day($search) : $this->now());
+            });
+        });
+
+        $query->when($fillters['search'] ?? false, function ($query, $search) {
+            return $query->whereHas('device', function($query) use ($search) {
+                $query->where('name', 'like', '%'. $search. '%')
+                ->orWhere('location', 'like', '%'. $search. '%')
+                ->orWhere('id', 'like', '%'. $search. '%');
             });
         });
     }
@@ -30,4 +39,6 @@ class DataDevice extends Model
     public function now(){
         return Carbon::today();
     }
+
+
 }

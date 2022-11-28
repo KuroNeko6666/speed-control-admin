@@ -42,6 +42,13 @@ class DataSidebar
             'sub_menus' => null,
             'active' => false,
         ],
+
+        'data_device' =>[
+            'name' => 'Data Device',
+            'path' => '/data-device',
+            'sub_menus' => null,
+            'active' => false,
+        ],
     ];
 
     public function data($active, $sub_active = null){
