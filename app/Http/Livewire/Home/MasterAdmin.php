@@ -94,9 +94,7 @@ class MasterAdmin extends Component
         return session()->flash('error', 'Data failed to delete');
     }
 
-    public function search(){
-        $this->render();
-    }
+
 
     public function resetData(){
         $this->name = '';

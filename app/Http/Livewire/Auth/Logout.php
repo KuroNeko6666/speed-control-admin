@@ -8,6 +8,7 @@ class Logout extends Component
 {
 
     public function logout(){
+        dd("test");
         auth()->logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();
